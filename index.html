@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>AI Student Study Assistant</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <main class="container">
+
+        <h1>AI Student Study Assistant</h1>
+
+        <p>
+            Ask an academic question and receive
+            a simple explanation.
+        </p>
+
+
+        <form method="POST">
+
+            <label for="question">
+                Your Question
+            </label>
+
+            <textarea
+                id="question"
+                name="question"
+                placeholder="Example: Explain what an entity is in a database."
+                required>{{ question }}</textarea>
+
+            <button type="submit">
+                Ask AI
+            </button>
+
+        </form>
+
+
+        {% if answer %}
+
+        <section class="answer">
+
+            <h2>AI Answer</h2>
+
+            <p>{{ answer }}</p>
+
+        </section>
+
+        {% endif %}
+
+    </main>
+
+</body>
+
+</html>
